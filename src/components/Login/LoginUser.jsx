@@ -13,38 +13,28 @@ function LoginUser() {
 		e.preventDefault();
 		setLoading(true);
 		setError(''); // Limpo qualquer erro anterior
-
+	
 		try {
-			const response = await axios.post('http://localhost:5000/login', { email, password });
-
-			if (response.data.token) {
-				// Simulo o armazenamento do token (normalmente eu usaria localStorage)
-				alert('Login bem-sucedido! Redirecionando...');
-				navigate('/home');
+			const response = await axios.get('http://localhost:5000/users', {
+				params: {
+					email: email,
+					password: password
+				}
+			});
+	
+			if (response.data.length > 0) {
+				const user = response.data[0];
+				navigate('/home'); // Simula o redirecionamento após o login
 			} else {
 				setError('Usuário não encontrado ou senha incorreta.');
 			}
 		} catch (err) {
-			if (err.response) {
-				// Se o servidor respondeu com um status fora do 2xx
-				if (err.response.status === 400) {
-					setError('Usuário não encontrado ou senha incorreta.');
-				} else if (err.response.status === 500) {
-					setError('Erro interno do servidor. Por favor, tente novamente mais tarde.');
-				} else {
-					setError(`Erro: ${err.response.status}. ${err.response.data.message}`);
-				}
-			} else if (err.request) {
-				// Se a requisição foi feita, mas nenhuma resposta foi recebida
-				setError('Erro de conexão. Verifique sua conexão com a internet e tente novamente.');
-			} else {
-				// Se ocorreu alguma outra situação na configuração da requisição
-				setError('Ocorreu um erro ao processar sua solicitação. Tente novamente.');
-			}
+			setError('Erro ao conectar com o servidor.');
 		} finally {
 			setLoading(false);
 		}
 	};
+	
 
 	return (
 		<div className="h-screen flex flex-col py-5 px-4">
@@ -57,7 +47,7 @@ function LoginUser() {
 				<label className="label flex flex-col items-start relative" htmlFor="email">
 					Email
 					<input
-						className="w-full ml-5 focus:ring-transparent focus:border-primary input-bordered input"
+						className="w-full focus:ring-transparent focus:border-primary input-bordered input"
 						id="email"
 						name="email"
 						type="email"
@@ -69,7 +59,7 @@ function LoginUser() {
 				<label className="label flex flex-col items-start relative" htmlFor="password">
 					Senha
 					<input
-						className="w-full ml-5 focus:ring-transparent focus:border-primary input-bordered input"
+						className="w-full focus:ring-transparent focus:border-primary input-bordered input"
 						id="password"
 						name="password"
 						type="password"
