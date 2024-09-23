@@ -3,12 +3,14 @@
     {
       "id": 1,
       "email": "usuario@exemplo.com",
-      "password": "senha123"
+      "password": "senha123",
+      "token": "ficticio123"
     },
     {
       "id": 2,
       "email": "outro@exemplo.com",
-      "password": "senha456"
+      "password": "senha456",
+      "token": "ficticio456"
     }
   ]
 }

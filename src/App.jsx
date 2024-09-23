@@ -7,14 +7,16 @@ import Home from './pages/HomePage';
 import "./assets/index.css";
 
 function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </div>
-  );
+	return (
+		<Router>
+			<div>
+				<Routes>
+					<Route path="/" element={<Login />} />
+					<Route path="/home" element={<Home />} />
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
