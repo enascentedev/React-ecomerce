@@ -3,14 +3,59 @@
     {
       "id": 1,
       "email": "usuario@exemplo.com",
-      "password": "senha123",
-      "token": "ficticio123"
+      "password": "senha123"
     },
     {
       "id": 2,
       "email": "outro@exemplo.com",
-      "password": "senha456",
-      "token": "ficticio456"
+      "password": "senha456"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook Dell Inspiron 15",
+      "descricao": "Notebook Dell com processador Intel Core i7, 16GB RAM e SSD de 512GB.",
+      "preco": 4999.90,
+      "estoque": 10,
+      "categoria": "Informática",
+      "imagem": "https://example.com/imagem-notebook.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Monitor LG Ultrawide 29'",
+      "descricao": "Monitor LG Ultrawide de 29 polegadas com resolução Full HD.",
+      "preco": 1299.90,
+      "estoque": 15,
+      "categoria": "Informática",
+      "imagem": "https://example.com/imagem-monitor.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Teclado Mecânico HyperX Alloy",
+      "descricao": "Teclado mecânico para jogos, com switches HyperX Red e iluminação RGB.",
+      "preco": 499.90,
+      "estoque": 25,
+      "categoria": "Periféricos",
+      "imagem": "https://example.com/imagem-teclado.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Mouse Logitech G502 Hero",
+      "descricao": "Mouse gamer com sensor Hero de 25K, 11 botões programáveis e pesos ajustáveis.",
+      "preco": 349.90,
+      "estoque": 30,
+      "categoria": "Periféricos",
+      "imagem": "https://example.com/imagem-mouse.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Impressora HP DeskJet Ink Advantage 2776",
+      "descricao": "Impressora multifuncional, wireless com scanner e impressão colorida.",
+      "preco": 699.90,
+      "estoque": 20,
+      "categoria": "Impressoras",
+      "imagem": "https://example.com/imagem-impressora.jpg"
     }
   ]
 }
