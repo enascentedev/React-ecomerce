@@ -9,12 +9,12 @@ import "./assets/index.css";
 function App() {
 	return (
 		<Router>
-			<div>
-				<Routes>
-					<Route path="/" element={<Login />} />
-					<Route path="/home" element={<Home />} />
-				</Routes>
-			</div>
+
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/home" element={<Home />} />
+			</Routes>
+
 		</Router>
 	);
 }

@@ -1,23 +1,23 @@
-import React, { useState } from 'react'; // Eu importo o React e o hook useState para gerenciar estados locais.
-import { NavLink, useNavigate } from 'react-router-dom'; // Eu uso NavLink para navegação e useNavigate para redirecionar o usuário após o login.
-import axios from 'axios'; // Axios é usado para fazer a requisição HTTP.
-import { useDispatch } from 'react-redux'; // Eu uso useDispatch para enviar uma ação ao Redux.
-import { loginSuccess } from '../../store/authSlice'; // Eu importo a ação loginSuccess que será disparada após o login bem-sucedido.
+import React, { useState } from 'react'; 
+import { NavLink, useNavigate } from 'react-router-dom'; 
+import axios from 'axios'; 
+import { useDispatch } from 'react-redux'; 
+import { loginSuccess } from '../../store/authSlice'; 
 
 function LoginUser() {
-  // Aqui, defino os estados locais para gerenciar os dados do formulário, erros e estado de carregamento.
-	const [email, setEmail] = useState(''); // Eu armazeno o email que o usuário digitar.
-	const [password, setPassword] = useState(''); // Eu armazeno a senha que o usuário digitar.
-	const [error, setError] = useState(''); // Eu armazeno a mensagem de erro, se houver.
-	const [loading, setLoading] = useState(false); // Eu controlo se os dados estão sendo carregados (true/false).
-	const navigate = useNavigate(); // Eu uso o navigate para redirecionar o usuário após o login.
-	const dispatch = useDispatch(); // Eu uso dispatch para disparar ações do Redux.
+  
+	const [email, setEmail] = useState(''); 
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate(); 
+	const dispatch = useDispatch(); 
 
 	// Quando o formulário é enviado, essa função é chamada.
 	const handleSubmit = async (e) => {
-		e.preventDefault(); // Eu previno o comportamento padrão do formulário, que é recarregar a página.
-		setLoading(true); // Eu defino o estado de carregamento como true.
-		setError(''); // Eu limpo quaisquer erros anteriores.
+		e.preventDefault(); 
+		setLoading(true); 
+		setError('');
 
 		try {
       // Faço uma requisição GET ao servidor para verificar as credenciais do usuário.
@@ -43,15 +43,15 @@ function LoginUser() {
 		}
 	};
 
-	// O que será renderizado na tela
+	
 	return (
 		<div className="h-screen flex flex-col py-5 px-4">
 			<img className="w-auto h-auto mx-auto"
 				src="https://static.vecteezy.com/ti/vetor-gratis/t2/6793746-logotipo-circulo-design-abstrato-global-comunicacao-tecnologia-modelo-linear-estilo-artificial-inteligencia-rede-neural-gratis-vetor.jpg"
-				alt="life com deus" /> {/* Eu mostro um logotipo no topo */}
-			<h2 className="m-2 text-center text-2xl tracking-tight">Olá! Faça seu Login.</h2> {/* Eu exibo um título convidando ao login */}
+				alt="logo" /> 
+			<h2 className="m-2 text-center text-2xl tracking-tight">Olá! Faça seu Login.</h2> 
 
-			<form className="flex flex-col mx-10" onSubmit={handleSubmit}> {/* Eu crio o formulário e ligo ao handleSubmit */}
+			<form className="flex flex-col mx-10" onSubmit={handleSubmit}> 
 				<label className="label flex flex-col items-start relative" htmlFor="email">
 					Email
 					<input
@@ -93,7 +93,7 @@ function LoginUser() {
 					</div>
 				)}
 				<button className="mt-6 lg:w-full bg-blue-500 btn-outline btn-primary hover:bg-blue-800 text-base-content btn">
-					Entrar {/* Botão de enviar o formulário */}
+					Entrar 
 				</button>
 				<NavLink to="/register" className="my-1 text-right block underline text-primary">
 					registre-se {/* Link para a página de registro */}
@@ -103,4 +103,4 @@ function LoginUser() {
 	);
 }
 
-export default LoginUser; // Eu exporto o componente LoginUser para ser usado em outras partes da aplicação.
+export default LoginUser;
