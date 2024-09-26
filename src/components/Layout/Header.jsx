@@ -13,6 +13,9 @@ function Header() {
 						src="https://static.vecteezy.com/ti/vetor-gratis/t2/6793746-logotipo-circulo-design-abstrato-global-comunicacao-tecnologia-modelo-linear-estilo-artificial-inteligencia-rede-neural-gratis-vetor.jpg"
 						alt="logo" />
 				</h1>
+				<ul className='mx-10 font-semibold'>
+					<li>PRODUTOS</li>
+				</ul>
 			</div>
 			<div className="flex-none">
 				<div className="dropdown dropdown-end">
