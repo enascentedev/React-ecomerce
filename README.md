@@ -5,3 +5,4 @@ npm run start
 npm run json-server
 Endpoints:
 http://localhost:5000/users
+http://localhost:5000/produtos
